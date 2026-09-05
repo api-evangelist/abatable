@@ -1,0 +1,86 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live discovery documents on login.abatable.com and mcp.abatable.com, plus the RFC 9728
+  WWW-Authenticate challenge mcp.abatable.com returns. No OpenAPI exists for this provider, so
+  nothing here is derived from a contract.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Two independent OAuth 2.0 authorization servers are published — https://login.abatable.com/
+    (Auth0, authorization_code + client_credentials + refresh_token + device_code + token-exchange
+    + jwt-bearer) and https://abatable.cloudflareaccess.com (authorization_code + refresh_token).
+- id: oidc
+  conforms: true
+  evidence: >-
+    https://login.abatable.com/.well-known/openid-configuration returns HTTP 200 with issuer,
+    authorization_endpoint, token_endpoint, userinfo_endpoint, jwks_uri and claims_supported.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: >-
+    /.well-known/oauth-authorization-server returns HTTP 200 on both login.abatable.com and
+    mcp.abatable.com.
+- id: rfc9728-oauth-protected-resource-metadata
+  conforms: true
+  evidence: >-
+    mcp.abatable.com returns 401 with WWW-Authenticate: Bearer realm="OAuth",
+    error="invalid_token", resource_metadata=... and serves
+    /.well-known/oauth-protected-resource (200) naming resource https://mcp.abatable.com and
+    authorization_servers [https://abatable.cloudflareaccess.com].
+- id: rfc7636-pkce
+  conforms: true
+  evidence: >-
+    Both authorization servers advertise code_challenge_methods_supported; the Cloudflare Access
+    server supports S256 only.
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: >-
+    registration_endpoint is published by both servers
+    (https://login.abatable.com/oidc/register and
+    https://abatable.cloudflareaccess.com/cdn-cgi/access/oauth/registration).
+- id: mcp-authorization
+  conforms: true
+  evidence: >-
+    mcp.abatable.com implements the MCP authorization pattern — protected-resource metadata
+    discovered from the WWW-Authenticate challenge, an authorization server supporting PKCE and
+    dynamic client registration.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every Abatable host probed.
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI or Swagger document was found on any Abatable host (see x-coverage).
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is published.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public error reference and no contract to read response media types from.
+- id: apis-json
+  conforms: false
+  evidence: /apis.json, /apis.yml and /.well-known/apis.json all 404 on abatable.com.
+- id: a2a
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json 404 on every host probed.
+domain_standards:
+  note: >-
+    REWARD-ONLY AND NOT AWARDED. Abatable operates squarely inside a market that HAS domain
+    standards — ICAO CORSIA eligibility, ICVCM Core Carbon Principles, the Verra/Gold Standard
+    registry schemas, SD VISta — and its marketing pages name all of them. None of that is a
+    contract-level declaration: there is no schema, URN, message type or endpoint in any
+    machine-readable Abatable artifact that asserts conformance, because Abatable publishes no
+    machine-readable artifact. Prose on a marketing page is explicitly not evidence for this
+    check, so no domain-standard conformance is claimed here.
+  candidates_if_a_contract_is_ever_published:
+  - CORSIA eligible emissions unit attributes (ICAO)
+  - ICVCM Core Carbon Principles labelling
+  - Verra VCS / Gold Standard registry serial-number and retirement schemas
+  - Article 6.2 Corresponding Adjustment / Letter of Authorisation attributes
+compliance_program:
+  published: false
+  note: >-
+    No trust centre, no SOC 2 / ISO 27001 / PCI / HIPAA claim, and no compliance page was found
+    (probe-security-programs.py returned trust=none). B Corp certification is a corporate
+    certification, not an information-security compliance programme, so no Compliance pointer is
+    emitted.

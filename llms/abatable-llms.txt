@@ -1,0 +1,63 @@
+# Abatable
+
+> Abatable is the operating system for environmental markets. The company helps organisations source, evaluate, buy, and manage high-integrity environmental assets — primarily carbon credits — through a combination of a SaaS platform, market intelligence tools, and a specialist advisory team. Abatable serves three types of users: corporate buyers procuring carbon credits to meet climate commitments, investors seeking market intelligence and opportunities, and project developers looking to access demand and scale their projects.
+
+Abatable does not hold inventory, does not take positions in projects, and does not represent any specific seller or developer. Its commercial model is funded entirely by buyers — not suppliers — making it conflict-free by design. This independence is core to how it operates. The company is B Corp certified, backed by Y Combinator, Azora, Global Founders Capital, Blue Bear Capital, and Alumni Ventures, and is headquartered at 1 Finsbury Market, London EC2A 2BN. The legal entity is Zero Imprint Ltd. It was founded in 2021 and won Product Innovation of the Year from Environmental Finance.
+
+Key statistics: 1.3bn tonnes of credits sourced for companies, 55mn tonnes transacted, 200+ companies supported, 18,000+ projects tracked and analysed across 23 registries, 5,000+ active project developers in the network, and 20%+ average cost savings reported by clients versus alternative approaches.
+
+Notable clients include Howden, Autotrader, A.P. Moller Capital, AXA, Mirova, L'Oréal, Ben & Jerry's, British Airways, Gold Standard, Natixis, Delta, Conservation International, IETA, Bregal Sphere, Cartesian Capital Group, and the Paris 2024 Olympic and Paralympic Games.
+
+## Platform
+
+- [The Abatable Platform](https://abatable.com/platform): A single system that connects buyers, suppliers, and market intelligence. Includes a Buyers Hub for running structured RFPs and managing portfolios; intelligence tools for pricing benchmarks, policy data, and supply/demand analysis; and supplier tools for project developers to access demand and submit offers to active buyers. Buyers and sellers operate on a shared foundation — RFPs become opportunities, submissions become signals, and every transaction improves how the next one is run.
+
+## Solutions by Use Case
+
+- [Run an RFP](https://abatable.com/procurement): Structured carbon credit procurement managed end-to-end through the Abatable platform. Buyers can run the process independently or have Abatable manage it on their behalf. Covers six stages: Plan (strategy and budgeting), Source (standardised RFP to 5,000+ developers), Evaluate (tiered due diligence), Purchase (single contract covering all suppliers), Manage and Monitor (integrated dashboard, real-time alerts), and Communicate and Report (automated reporting, documentation, marketing toolkits). Consistently delivers 20%+ cost savings versus fragmented multi-broker approaches.
+
+- [Build your Strategy](https://abatable.com/advisory): Independent, conflict-free advisory for organisations designing or refining their carbon and climate approach. Advisory services include: carbon procurement strategy, insetting (identifying Scope 3 value chain projects), CORSIA compliance strategy, pricing and portfolio valuation, technical strategy for buyers and developers, and reporting support. The team has 70+ combined years of environmental market experience and has published research with the City of London, the ASEAN Alliance on Carbon Markets, and the International Platform for Insetting.
+
+- [Conduct Due Diligence](https://abatable.com/due-diligence): Tiered third-party due diligence on carbon projects, calibrated to transaction size. Level 1: automated risk screening and geo-screening available immediately. Level 2: analyst-led desk assessment covering five pillars — project quality, methodology, policy environment, developer track record, and market conditions — delivered within one week. Level 3: advanced assessment including developer interviews, data room access, and site visits for long-term offtakes or direct investments, delivered in three to four weeks. The team assesses over 60 criteria across core risk pillars and has facilitated over 55mn tonnes of transactions, providing a commercial lens that traditional research organisations lack.
+
+- [Get Market Intelligence](https://abatable.com/intelligence): Proprietary market data and analysis in one platform. Includes: pricing insights drawn from 85,000+ real transaction data points, benchmarkable by type, region, vintage, and methodology; vintage forward curves (the world's first such library for voluntary carbon markets); country policy profiles built from interviews with in-country legal and policy experts; CORSIA supply and demand forecasting modelled to 2035 at airline and regional level; and supply and demand tracking across 18,000+ projects and 23 registries. Available via platform subscription with option to consult expert analysts directly.
+
+- [Access Demand](https://abatable.com/access-demand): A free sales channel for project developers and suppliers to reach Abatable's network of 200+ active buyers with committed procurement mandates. Suppliers build a project profile once and receive direct RFP invitations as new buyer mandates are activated. Abatable signs procurement mandates with buyers before supply is sourced, so demand is contractually anchored. After each RFP, structured feedback on pricing, buyer preferences, and submission quality is provided. No exclusivity or long-term commitments required from developers.
+
+## Solutions by Market
+
+- [Voluntary Carbon Market](https://abatable.com/voluntary): Procurement, advisory, and intelligence for organisations buying voluntary carbon credits. Abatable opens the full supplier landscape (5,000+ developers), runs competitive RFPs, benchmarks live pricing, and conducts independent due diligence. Covers all project types and standards, including emissions avoidance, removals, nature-based solutions, technology solutions, and additional certifications such as Core Carbon Principles and SDVista. The VCM allows companies to fund climate projects — forest protection, land restoration, engineered carbon removal — outside of mandatory compliance schemes.
+
+- [CORSIA](https://abatable.com/corsia): Dedicated procurement, advisory, and intelligence for airlines and aviation-sector organisations meeting CORSIA compliance obligations. CORSIA (the Carbon Offsetting and Reduction Scheme for International Aviation) is an ICAO programme requiring airlines to offset emissions growth above 2019 baseline levels. The First Phase credit retirement deadline is January 2028. Abatable models supply and demand to 2035 at airline and regional level, assesses credits for eligibility at both project and country level (including Letters of Authorisation and Corresponding Adjustments), and structures deals with protection if eligibility status changes. The team includes CORSIA's Technical Advisory Body member Juan Carlos Arredondo, with 20+ years of experience on the subject.
+
+## Solutions by Organisation Type
+
+- [Buyers](https://abatable.com/buyers): For corporate sustainability and procurement teams buying environmental assets to meet net-zero, sustainability, or compliance targets. Abatable provides access to the full supplier market, conflict-free advisory, structured RFP procurement, tiered due diligence, and ongoing portfolio monitoring — all under one partner relationship with a single contract covering all suppliers.
+
+- [Investors](https://abatable.com/investors): For investment firms seeking market intelligence and deal flow in environmental asset markets. Abatable provides: advisory across the full investment lifecycle (carbon removal strategy, CORSIA, due diligence, portfolio valuation, reporting), sourcing campaigns to identify opportunities, access to demand for portfolio companies, third-party due diligence scaled to transaction complexity, and intelligence tools with 80,000+ pricing data points, project risk scores, country policy assessments, and CORSIA forecasts. Clients include Cartesian Capital Group, Mirova, A.P. Moller Capital, and Bregal Sphere.
+
+- [Developers](https://abatable.com/developers): For carbon project developers looking to access buyer demand, benchmark pricing, and enter the market with commercial confidence. Developers create a free account, build a project profile, and receive direct invitations to RFPs from buyers with committed mandates. Abatable provides structured market feedback after each RFP, pricing benchmarks by methodology and geography, and advisory support for first-time market entrants. Abatable holds no inventory and has no exclusive relationships — selection is based strictly on buyer criteria.
+
+## About
+
+- [About Abatable](https://abatable.com/about-us): Mission is to empower every organisation to build a thriving future for climate, nature, and people. Founded by Valerio Magliulo (CEO — ex-Meta, Google, Monzo; MIT Technology Review Innovators Under 35) and Maria Eugenia Filmanovic (Co-Founder — ex-Goldman Sachs VP; part of the founding team for the Apple Restore Fund, a $200mn nature and carbon investment). Leadership team also includes: Juan Carlos Arredondo (Director of Knowledge, Policy and Advocacy — former UNFCCC climate negotiator for Mexico, Article 6 lead negotiator, CORSIA TAB member); Maria Pia Alais (COO); Nick Daniel (Global Commercial Director); Theo Petropoulos (Director of Product); Kate Taylor (Director of Go-To-Market); Jimena Munoz (Director of People).
+
+- [Contact](https://abatable.com/contact-us): Get in touch with the Abatable team.
+
+## Resources
+
+- [Blog](https://abatable.com/resources/blog): Latest carbon market news, analysis, and updates. Recent posts cover vintage forward price curves, CORSIA developments in APAC, and the carbon market dimensions that matter in 2026.
+
+- [Reports](https://abatable.com/resources/reports): In-depth carbon market research and white papers. Recent flagship report: "The carbon market dimensions that matter in 2026." Key 2025 data points: $9bn in nature-based solution investments announced (a record), $15.8bn in carbon market funding commitments, and a 58% increase in the value of future carbon credit deals.
+
+- [Case Studies](https://abatable.com/resources/case-studies): How Abatable has supported organisations including Howden, Autotrader, A.P. Moller Capital, ICVCM, and the Paris 2024 Olympics to procure carbon credits and meet climate targets.
+
+- [Webinars & Events](https://abatable.com/resources/webinars-events): Recorded and upcoming events on VCM, CORSIA, carbon policy, and insetting.
+
+## Optional
+
+- [Privacy Policy](https://abatable.com/privacy-policy)
+- [Terms and Conditions](https://abatable.com/terms-and-conditions)
+- [Sign in to the platform](https://app.abatable.com/intelligence)
+- [LinkedIn](https://www.linkedin.com/company/abatable/)
+- [YouTube](https://www.youtube.com/@abatable)

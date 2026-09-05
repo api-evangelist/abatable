@@ -1,0 +1,43 @@
+generated: '2026-09-05'
+method: probed
+source: https://login.abatable.com/.well-known/openid-configuration
+docs: null
+docs_note: >-
+  Abatable publishes no scopes or permissions reference. The scopes below are the
+  `scopes_supported` array its Auth0 OIDC discovery document advertises — the standard OIDC claim
+  scopes plus Auth0's profile-claim scopes. They are identity scopes, not API authorisation
+  scopes: no Abatable-specific resource scope (read:*, write:*) is published anywhere, and the
+  Cloudflare Access authorization server that guards the MCP endpoint publishes no
+  `scopes_supported` at all.
+schemes:
+- name: Auth0 OIDC
+  source: well-known/abatable-login-openid-configuration.json
+  issuer: https://login.abatable.com/
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.abatable.com/authorize
+    tokenUrl: https://login.abatable.com/oauth/token
+- name: Cloudflare Access (MCP)
+  source: well-known/abatable-mcp-oauth-authorization-server.json
+  issuer: https://abatable.cloudflareaccess.com
+  scopes_supported_published: false
+scopes:
+- {scope: openid, description: OIDC authentication; issue an ID token, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: profile, description: Basic profile claims, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: email, description: Email address claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: email_verified, description: Email verification status claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: offline_access, description: Issue a refresh token, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: name, description: Full name claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: given_name, description: Given name claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: family_name, description: Family name claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: nickname, description: Nickname claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: picture, description: Profile picture claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: phone, description: Phone number claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: address, description: Address claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: created_at, description: Account creation timestamp claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+- {scope: identities, description: Linked identity provider records claim, flows: [authorizationCode], sources: [well-known/abatable-login-openid-configuration.json]}
+resource_scopes:
+  published: false
+  note: >-
+    No resource/permission scope vocabulary is published. An integrator cannot tell from any public
+    surface what an Abatable access token is authorised to do.

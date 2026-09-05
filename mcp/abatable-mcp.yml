@@ -1,0 +1,52 @@
+generated: '2026-09-05'
+method: probed
+source: https://mcp.abatable.com/
+status: published
+name: Abatable MCP Server
+description: >-
+  A hosted Model Context Protocol server operated by Abatable at mcp.abatable.com. It is not
+  announced anywhere on abatable.com, in the site llms.txt, or in the GitHub organisation — it was
+  found by probing the host and is evidenced entirely by what the host itself returns: an RFC 9728
+  WWW-Authenticate challenge naming an OAuth protected-resource document, plus RFC 8414
+  authorization-server metadata. Both discovery documents resolve to Abatable's own Cloudflare Zero
+  Trust team domain (abatable.cloudflareaccess.com), which is what establishes first-party
+  ownership.
+deployment:
+  mode: remote
+  endpoint: https://mcp.abatable.com/mcp
+  auth: oauth
+  verified: probed
+  note: >-
+    The host is Cloudflare Access-gated, so the JSON-RPC path could not be confirmed anonymously.
+    A POST of {"jsonrpc":"2.0","id":1,"method":"tools/list"} to https://mcp.abatable.com/mcp
+    returned HTTP 401 with
+    WWW-Authenticate: Bearer realm="OAuth", error="invalid_token",
+    resource_metadata="https://mcp.abatable.com/.well-known/cloudflare-access-protected-resource/mcp"
+    — an OAuth challenge, not a 404, which is why /mcp is recorded here rather than the host root.
+    No install command and no package: Abatable publishes no stdio distribution.
+authorization:
+  protected_resource: https://mcp.abatable.com/.well-known/oauth-protected-resource
+  resource: https://mcp.abatable.com
+  authorization_servers:
+    - https://abatable.cloudflareaccess.com
+  issuer: https://abatable.cloudflareaccess.com
+  authorization_endpoint: https://abatable.cloudflareaccess.com/cdn-cgi/access/oauth/authorization
+  token_endpoint: https://abatable.cloudflareaccess.com/cdn-cgi/access/oauth/token
+  registration_endpoint: https://abatable.cloudflareaccess.com/cdn-cgi/access/oauth/registration
+  revocation_endpoint: https://abatable.cloudflareaccess.com/cdn-cgi/access/oauth/revoke
+  grant_types_supported: [authorization_code, refresh_token]
+  code_challenge_methods_supported: [S256]
+  dynamic_client_registration: true
+  gate: Cloudflare Access (team domain abatable.cloudflareaccess.com)
+tools: []
+tools_note: >-
+  NOT ENUMERATED. tools/list requires a Cloudflare Access bearer token, and there is no published
+  tool list to fall back on — Abatable's llms.txt does not mention MCP and the docs surface does
+  not exist. The tool set is therefore unknown, and nothing has been derived: this repo holds no
+  OpenAPI to derive candidate tools from. Recording an empty list is the honest state, not a gap
+  to fill.
+x-evidence:
+  - {fetched: '2026-09-05', url: 'https://mcp.abatable.com/', http_status: 401, note: 'WWW-Authenticate Bearer realm="OAuth" with resource_metadata'}
+  - {fetched: '2026-09-05', url: 'https://mcp.abatable.com/mcp', http_status: 401, method: POST, body: 'jsonrpc tools/list', note: OAuth challenge, not 404}
+  - {fetched: '2026-09-05', url: 'https://mcp.abatable.com/.well-known/oauth-protected-resource', http_status: 200, file: well-known/abatable-mcp-oauth-protected-resource.json}
+  - {fetched: '2026-09-05', url: 'https://mcp.abatable.com/.well-known/oauth-authorization-server', http_status: 200, file: well-known/abatable-mcp-oauth-authorization-server.json}

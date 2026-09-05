@@ -1,0 +1,18 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live responses from https://mcp.abatable.com/ and https://login.abatable.com/ — the only two
+  Abatable API-shaped hosts reachable without credentials.
+limit_count: 0
+limits: []
+headers: []
+exhaustion_status: null
+note: >-
+  No rate limits are documented, because no API documentation exists. Probing the live surfaces
+  produced no runtime signal either: the 401 responses from mcp.abatable.com (Cloudflare Access)
+  and the 200 discovery responses from login.abatable.com carry no X-RateLimit-*, no RateLimit-*
+  and no Retry-After header. An honest zero — checked, nothing published and nothing observable
+  anonymously. Any limits that exist sit behind the Cloudflare Access gate and the Auth0 tenant.
+evidence:
+- {url: 'https://mcp.abatable.com/', status: 401, finding: 'no rate-limit headers; WWW-Authenticate only'}
+- {url: 'https://login.abatable.com/.well-known/openid-configuration', status: 200, finding: no rate-limit headers}

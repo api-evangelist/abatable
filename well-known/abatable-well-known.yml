@@ -1,0 +1,113 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Direct HTTP probes of the named /.well-known/ path list against every host the record knows —
+  the registrable domain and www, the application host, the Auth0 login host, the MCP host, and
+  the status host. Probed 2026-09-05.
+notes: >-
+  Abatable serves no /.well-known/ documents from its marketing domain (abatable.com) or from its
+  application host (app.abatable.com). It DOES serve real discovery documents from two hosts it
+  controls: login.abatable.com (its Auth0 custom-domain tenant, OIDC + RFC 8414) and
+  mcp.abatable.com (an MCP server fronted by Cloudflare Access, RFC 8414 + RFC 9728). No
+  security.txt, no api-catalog, no apis.json, no agent card, and no AAuth resource document was
+  found on any host.
+path_echo_control: passed
+path_echo_control_note: >-
+  A negative-control request to /.well-known/abatable-negative-control-7f3ab91c.json returned 404
+  on abatable.com, www.abatable.com, app.abatable.com and login.abatable.com, and 401 (the
+  Cloudflare Access challenge) on mcp.abatable.com. No host answered 2xx to a path that cannot
+  exist, so no hit on this record is a path-echo false positive.
+hit_count: 4
+hosts:
+  - host: https://abatable.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/api-catalog.json, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/ucp.json, status: 404}
+      - {path: /.well-known/acp.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://www.abatable.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 301, note: 301 to the apex; the apex returns 404}
+      - {path: /apis.yml, status: 301, note: 301 to the apex; the apex returns 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://app.abatable.com
+    note: >-
+      Next.js application on Vercel; the root 307s to /api/auth/login and then to the Auth0
+      universal login. Every well-known path 404s.
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://login.abatable.com
+    note: >-
+      Auth0 tenant on an Abatable-controlled custom domain. issuer is
+      https://login.abatable.com/, which is what proves the documents are served for Abatable
+      rather than for a shared Auth0 host.
+    documents:
+      - {path: /.well-known/openid-configuration, status: 200, file: abatable-login-openid-configuration.json}
+      - {path: /.well-known/oauth-authorization-server, status: 200, file: abatable-login-oauth-authorization-server.json}
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/aauth-resource.json, status: 404}
+      - {path: /.well-known/apis.json, status: 404}
+      - {path: /apis.json, status: 404}
+      - {path: /apis.yml, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://mcp.abatable.com
+    note: >-
+      MCP server behind Cloudflare Access. Every path except the two OAuth metadata documents
+      returns a 401 bearing an RFC 9728 WWW-Authenticate challenge, including the negative
+      control — so the 401s are the gate, not evidence of a document.
+    documents:
+      - {path: /.well-known/oauth-authorization-server, status: 200, file: abatable-mcp-oauth-authorization-server.json}
+      - {path: /.well-known/oauth-protected-resource, status: 200, file: abatable-mcp-oauth-protected-resource.json}
+      - {path: /.well-known/security.txt, status: 401}
+      - {path: /.well-known/openid-configuration, status: 401}
+      - {path: /.well-known/api-catalog, status: 401}
+      - {path: /.well-known/ai-plugin.json, status: 401}
+      - {path: /.well-known/aauth-resource.json, status: 401}
+      - {path: /.well-known/apis.json, status: 401}
+      - {path: /apis.json, status: 401}
+      - {path: /apis.yml, status: 401}
+      - {path: /.well-known/agent-card.json, status: 401}
+      - {path: /.well-known/agent.json, status: 401}
+  - host: https://status.abatable.com
+    note: Better Stack status page; every well-known path 301s to the page root.
+    documents:
+      - {path: /.well-known/security.txt, status: 301}
+      - {path: /.well-known/openid-configuration, status: 301}
+      - {path: /.well-known/api-catalog, status: 301}
+      - {path: /.well-known/agent-card.json, status: 301}
+      - {path: /.well-known/agent.json, status: 301}

@@ -1,0 +1,18 @@
+generated: '2026-09-05'
+method: searched
+source: https://abatable.com/platform-plans
+plan_count: 0
+currency: null
+plans: []
+note: >-
+  Abatable publishes NO pricing. It ships a page titled "Platform plans" at
+  https://abatable.com/platform-plans (HTTP 200, fetched 2026-09-05) that contains navigation, an
+  H1 and a footer and no plan content whatsoever — no tier names, no prices, no quotas. Every
+  commercial path on the site funnels to "Talk to us" / https://abatable.com/contact-us. The
+  llms.txt says intelligence is "available via platform subscription" without naming a price, and
+  the developer-facing side ("Access demand") is described as a free sales channel for carbon
+  project developers. This is a contact-sales motion, not an unpublished-price accident.
+evidence:
+- {url: 'https://abatable.com/platform-plans', status: 200, finding: page renders with no pricing content}
+- {url: 'https://abatable.com/contact-us', status: 200, finding: the actual commercial entry point}
+- {url: 'https://abatable.com/llms.txt', status: 200, finding: '"platform subscription" named, no price'}

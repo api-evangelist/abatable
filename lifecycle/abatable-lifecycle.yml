@@ -1,0 +1,37 @@
+generated: '2026-09-05'
+method: searched
+source: https://status.abatable.com/
+versioning:
+  scheme: unknown
+  current: null
+  docs: null
+  note: >-
+    No versioning policy is published. There is no API reference, no version identifier in any
+    public URL, and the MCP endpoint is unversioned (https://mcp.abatable.com).
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No deprecation or sunset policy is published on any Abatable surface.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No SLA document is public. The status page reports observed uptime per service rather than a
+    committed target.
+status_page: https://status.abatable.com/
+status_page_detail:
+  provider: Better Stack
+  services_monitored:
+  - name: Abatable App
+    observed_uptime: 99.969%
+    state_at_check: Operational
+  history_window: rolling ~90 days of daily up/down bars, with an incident archive
+  checked: '2026-09-05'
+  http_status: 200
+changelog:
+  published: false
+  note: >-
+    No product changelog or release-notes page exists. The only dated, structured record Abatable
+    publishes about the running service is the status page's incident history.
+deprecated_operations: []
+deprecated_operations_note: No contract exists, so no operation-level deprecation can be derived.

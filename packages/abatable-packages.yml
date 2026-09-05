@@ -1,0 +1,35 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, api.github.com/orgs/Abatable, and the abatable.com site — searched
+  2026-09-05.
+package_count: 0
+official_count: 0
+packages: []
+note: >-
+  Abatable ships no client libraries. Searched npm, PyPI and the company's own GitHub
+  organisation; nothing first-party exists, which follows from there being no public API to wrap.
+  No SDKs pointer is emitted.
+registries_checked:
+- {registry: npm, query: abatable, result: 'one unrelated package (see squatted_names), no first-party library'}
+- {registry: pypi, query: abatable, result: 'HTTP 404 — no package'}
+- {registry: github, query: 'org Abatable', result: '2 public repos, neither a client library'}
+github_org:
+  url: https://github.com/Abatable
+  verified_first_party: true
+  verification: 'org blog field is https://www.abatable.com/; org description "Carbon offsetting procurement you can trust"; created 2021-07-21'
+  public_repos: 2
+  repos:
+  - {name: factbook.json, url: 'https://github.com/Abatable/factbook.json', note: 'fork of the public-domain CIA World Factbook JSON dataset — not an Abatable library'}
+  - {name: take-home-tech-test, url: 'https://github.com/Abatable/take-home-tech-test', note: 'recruiting exercise scaffold — not a client library'}
+squatted_names:
+- registry: npm
+  name: abatable
+  url: https://www.npmjs.com/package/abatable
+  version: 1.0.0
+  published: '2024-02-03'
+  official: false
+  note: >-
+    NOT ABATABLE. Published 2024-02-03 by the account `fuaeh8v1qabqgea`
+    (3915920396846704@scatterteam.com) with no repository field and no description beyond the
+    name. Recorded here so a future pass does not mistake the name match for a first-party SDK.

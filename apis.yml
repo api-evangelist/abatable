@@ -1,18 +1,64 @@
 aid: abatable
 name: Abatable
-description: 'Abatable is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Abatable (legal entity Zero Imprint Ltd, London) operates a procurement and intelligence platform
+  for environmental assets — principally voluntary carbon credits and CORSIA-eligible units. Buyers
+  run structured RFPs against a network of 5,000+ project developers, commission tiered third-party
+  due diligence, and monitor delivered portfolios from one dashboard; investors and developers buy
+  the same market intelligence layer, built from 85,000+ transaction price points, vintage forward
+  curves, country policy profiles and supply/demand tracking across 18,000+ projects in 23
+  registries. The company holds no inventory and represents no seller, and is funded by buyers
+  rather than suppliers. The product is delivered as an authenticated SaaS application at
+  app.abatable.com; there is no public developer program, no published API reference and no
+  machine-readable contract, though the company does operate an undocumented, OAuth-gated Model
+  Context Protocol server at mcp.abatable.com.
+type: Index
+image: https://cdn.prod.website-files.com/6a21901ab9e1e5d902f470f8/6a21901ab9e1e5d902f471a6_abatable-open-graph.jpg
 url: https://raw.githubusercontent.com/api-evangelist/abatable/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass
 specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 tags:
-- Company
-apis: []
+- Carbon Markets
+- Carbon Credits
+- Carbon Offsets
+- Environmental Assets
+- Voluntary Carbon Market
+- CORSIA
+- Climate
+- Sustainability
+- Net Zero
+- Procurement
+- Market Intelligence
+- Due Diligence
+- ESG
+- MCP
+apis:
+- aid: abatable:abatable-mcp-server
+  name: Abatable MCP Server
+  description: >-
+    A hosted Model Context Protocol endpoint operated by Abatable at mcp.abatable.com, fronted by
+    Cloudflare Access. It advertises itself as an OAuth protected resource under RFC 9728 and
+    publishes RFC 8414 authorization-server metadata pointing at Abatable's own Cloudflare Zero
+    Trust team domain. The tool set could not be enumerated anonymously — tools/list returns an
+    OAuth challenge — and Abatable does not document the server anywhere on its public site, so
+    this entry records a probed agent surface, not a published product.
+  image: https://cdn.prod.website-files.com/6a21901ab9e1e5d902f470f8/6a21901ab9e1e5d902f471a6_abatable-open-graph.jpg
+  humanURL: https://abatable.com/platform
+  baseURL: https://mcp.abatable.com
+  tags:
+  - MCP
+  - Agent
+  - Carbon Markets
+  properties:
+  - type: MCPServer
+    url: mcp/abatable-mcp.yml
+  - type: Authentication
+    url: authentication/abatable-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +66,51 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/abatable
+  url: https://abatable.com/
+- type: Blog
+  url: https://abatable.com/resources/blog
+- type: Support
+  url: https://abatable.com/contact-us
+- type: TermsOfService
+  url: https://abatable.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://abatable.com/privacy-policy
+- type: Login
+  url: https://app.abatable.com/
+- type: GitHubOrganization
+  url: https://github.com/Abatable
+- type: LinkedIn
+  url: https://www.linkedin.com/company/abatable/
+- type: YouTube
+  url: https://www.youtube.com/@abatable
+- type: StatusPage
+  url: https://status.abatable.com/
+- type: LLMsTxt
+  url: llms/abatable-llms.txt
+- type: WellKnown
+  url: well-known/abatable-well-known.yml
+- type: MCPServer
+  url: mcp/abatable-mcp.yml
+- type: Authentication
+  url: authentication/abatable-authentication.yml
+- type: OAuthScopes
+  url: scopes/abatable-scopes.yml
+- type: Conformance
+  url: conformance/abatable-conformance.yml
+- type: Conventions
+  url: conventions/abatable-conventions.yml
+- type: Lifecycle
+  url: lifecycle/abatable-lifecycle.yml
+- type: Plans
+  url: plans/abatable-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/abatable-rate-limits.yml
+- type: Packages
+  url: packages/abatable-packages.yml
+- type: DomainSecurity
+  url: security/abatable-domain-security.yml
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v3

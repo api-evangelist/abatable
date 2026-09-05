@@ -1,0 +1,84 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live probes of https://mcp.abatable.com, https://login.abatable.com and https://app.abatable.com,
+  plus https://abatable.com/llms.txt — 2026-09-05. There is no OpenAPI in this repo and no public
+  API documentation, so every field below is either observed on the wire or honestly marked
+  undocumented. Nothing is inferred from a spec that does not exist.
+scope_note: >-
+  This file describes the only two machine-callable surfaces Abatable exposes to the public
+  internet: an OAuth/OIDC identity surface and an OAuth-gated MCP endpoint. It does NOT describe
+  the platform's internal application API, which is not published.
+authentication:
+  style: oauth2-bearer
+  human: OIDC authorization_code + PKCE against Auth0 (https://login.abatable.com/)
+  machine: OAuth 2.0 bearer token issued by Cloudflare Access (https://abatable.cloudflareaccess.com)
+  header: 'Authorization: Bearer <token>'
+  challenge: 'RFC 9728 WWW-Authenticate on mcp.abatable.com carries resource_metadata'
+  see: authentication/abatable-authentication.yml
+idempotency:
+  coverage: none
+  supported: false
+  header: null
+  scope: []
+  retention: null
+  evidence: >-
+    No idempotency mechanism is documented or discoverable. There is no API reference, no
+    Idempotency-Key parameter in any contract (there is no contract), and the MCP endpoint returns
+    an auth challenge before any request semantics can be observed. Recorded as `none` rather than
+    `unknown` because the public surface offers a consumer no replay-protection contract at all —
+    which is the fact an agent needs.
+reversibility:
+  grade: na
+  supported: na
+  operations: []
+  note: >-
+    NOT APPLICABLE — no public write surface exists. Abatable publishes no API through which an
+    agent can create, modify, cancel, refund or reverse anything. The MCP endpoint may expose
+    writes to authorised tenants, but its tool list is Cloudflare Access-gated and could not be
+    enumerated, so no reversal operation and no reversal window can be asserted. Inventing a
+    window here would be the one error in this pipeline capable of costing a user real money in a
+    market that transacts carbon credits.
+dry_run_mode:
+  supported: na
+  note: No public write surface; nothing to rehearse.
+pagination:
+  style: undocumented
+  params: []
+  response_fields: []
+  note: No public collection endpoint and no reference documenting pagination.
+field_expansion:
+  supported: unknown
+metadata:
+  supported: unknown
+request_tracing:
+  header: null
+  observed: >-
+    Responses from app.abatable.com carry Vercel's x-vercel-id and Cloudflare's cf-ray; responses
+    from mcp.abatable.com carry cf-ray. Neither is a documented, provider-owned correlation id an
+    integrator is told to quote in a support ticket.
+versioning:
+  scheme: none-published
+  note: 'Neither https://mcp.abatable.com nor https://login.abatable.com carries a version segment.'
+  see: lifecycle/abatable-lifecycle.yml
+error_envelope:
+  format: >-
+    The only public error shape observed is the OAuth 2.0 error object (RFC 6749 §5.2) returned by
+    the Cloudflare Access gate:
+    {"error":"invalid_token","error_description":"Missing or invalid access token","resource_metadata":"..."}.
+  rfc9457: false
+  note: >-
+    That is the gate's envelope, not Abatable's. No application-level error catalogue is published,
+    which is why this repo carries no errors/ artifact — there is nothing to derive it from and
+    nothing to search.
+rate_limit_signaling:
+  headers: []
+  note: 'No rate-limit headers observed on any public response.'
+  see: rate-limits/abatable-rate-limits.yml
+cross_links:
+  authentication: authentication/abatable-authentication.yml
+  scopes: scopes/abatable-scopes.yml
+  lifecycle: lifecycle/abatable-lifecycle.yml
+  rate_limits: rate-limits/abatable-rate-limits.yml
+  conformance: conformance/abatable-conformance.yml
+  mcp: mcp/abatable-mcp.yml
