@@ -52,6 +52,10 @@ apis:
   baseURL: https://mcp.abatable.com
   tags:
   - MCP
+  - Agents
+  - Carbon Markets
+  tags_raw:
+  - MCP
   - Agent
   - Carbon Markets
   properties:
