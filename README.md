@@ -64,5 +64,116 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Abatable is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/abatable
+Abatable (legal entity Zero Imprint Ltd, London) operates a procurement and intelligence platform for environmental assets — principally voluntary carbon credits and CORSIA-eligible units. Buyers run structured RFPs against a network of 5,000+ project developers, commission tiered third-party due diligence, and monitor delivered portfolios from one dashboard; investors and developers buy the same market intelligence layer, built from 85,000+ transaction price points, vintage forward curves, country policy profiles and supply/demand tracking across 18,000+ projects in 23 registries. The company holds no inventory and represents no seller, and is funded by buyers rather than suppliers. The product is delivered as an authenticated SaaS application at app.abatable.com; there is no public developer program, no published API reference and no machine-readable contract, though the company does operate an undocumented, OAuth-gated Model Context Protocol server at mcp.abatable.com.
+
+**Areas:** Carbon Markets · Carbon Credits · Carbon Offsets · Environmental Assets · Voluntary Carbon Market · CORSIA · Climate · Sustainability · Net Zero · Procurement · Market Intelligence · Due Diligence
+
+## Abatable on APIs.io
+
+Everything profiled for Abatable is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/abatable/](https://apis.io/providers/abatable/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Abatable MCP Server](https://apis.io/apis/abatable/abatable-mcp-server/) — A hosted Model Context Protocol endpoint operated by Abatable at mcp.abatable.com, fronted by Cloudflare Access. It advertises itself as an OAuth protected…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Abatable MCP Server](https://apis.io/servers/abatable/abatable-mcp-server/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Abatable Authentication](https://apis.io/security/abatable/abatable-authentication/)
+- [Abatable Domain Security](https://apis.io/security/abatable/abatable-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Abatable Scopes](https://apis.io/scopes/abatable/abatable-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Abatable Plans Pricing](https://apis.io/plans/abatable/abatable-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Abatable Rate Limits](https://apis.io/rate-limits/abatable/abatable-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://abatable.com/)
+- [Support](https://abatable.com/contact-us)
+- [Blog](https://abatable.com/resources/blog)
+- [Terms of service](https://abatable.com/terms-and-conditions)
+- [Privacy policy](https://abatable.com/privacy-policy)
+- [GitHub](https://github.com/Abatable)
+- [Status](https://status.abatable.com/)
+
+## API Evangelist rating
+
+**Kin Score 23.2** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 27.6 |
+
+**Agent readiness 24.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/abatable/](https://apis.io/providers/abatable/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Abatable: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/abatable/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
